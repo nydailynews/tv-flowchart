@@ -74,3 +74,8 @@ h1 {
     margin-bottom: -3px;
     border: 1px solid #D8D8D8;
 }
+
+.flex-item img.yesno {
+    width: 300px;
+    border: none;
+}
