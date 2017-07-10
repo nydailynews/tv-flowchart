@@ -9,7 +9,8 @@ body {
 }
 
 article {
-    max-width: 775px;
+    max-width: 800px;
+    margin-left: 125px;
 }
 
 h1 {
@@ -19,7 +20,7 @@ h1 {
     font-size: 50px;
     line-height: 60px;
     text-align: left;
-    margin: 30px;
+    margin-top: 30px;
 }
 
 .fave {
@@ -40,7 +41,7 @@ h1 {
     text-align: left;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 30px;
-    margin: 50px 0 25px 30px;
+    margin: 50px 0 25px 0;
  }
 
 .flex-container {
@@ -51,7 +52,6 @@ h1 {
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
-    margin: 30px;
     justify-content: center;
 }
 
@@ -78,4 +78,40 @@ h1 {
 .flex-item img.yesno {
     width: 300px;
     border: none;
+}
+
+/*  RESULTS  */
+
+.indent {
+    margin: 30px 0 30px 125px;
+}
+
+.results-header {
+    position: relative;
+    display: inline-block;
+}
+
+.results-header h1 {
+    display: inline-block;
+    float: left;
+    margin: 30px 0 30px 125px;
+}
+
+.results-text {
+    position: absolute;    
+    height: 100%;
+    text-align: center;    
+    width: 100%;
+}
+.results-text:before {
+   content: '';
+   display: inline-block;
+   height: 100%;
+   vertical-align: middle;
+}
+
+.results-header img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
