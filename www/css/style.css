@@ -36,7 +36,7 @@ h1 {
 
 /*  SECTIONS  */
 
-.section-marker {
+h2 {
     line-height: 40px;
     text-align: left;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -44,7 +44,7 @@ h1 {
     margin: 50px 0 25px 0;
  }
 
-.flex-container {
+section.question ul {
     list-style: none;
     display: -webkit-box;
     display: -moz-box;
@@ -55,12 +55,12 @@ h1 {
     justify-content: center;
 }
 
-.flex-item {
+section.question ul li {
     margin: 10px;
     text-align: center;
 }
 
-.flex-item p {
+section.question ul li p {
     background-color: #00aac8;
     height: 40px;
     color: white;
@@ -70,12 +70,12 @@ h1 {
     padding: 12px;
 }
 
-.flex-item img {
+section.question ul li img {
     margin-bottom: -3px;
     border: 1px solid #D8D8D8;
 }
 
-.flex-item img.yesno {
+section.question ul li img.yesno {
     width: 300px;
     border: none;
 }
