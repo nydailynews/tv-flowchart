@@ -8,6 +8,14 @@ body {
     display: none;
 }
 
+.tv-header {
+    width: 100%;
+    height: 215px;
+    background-image: url(../img/tv-header.png), url(../img/tv-header-results.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left, right;
+}
+
 article {
     max-width: 800px;
     margin-left: 125px;
@@ -83,9 +91,10 @@ section.question ul li img.yesno {
 /*  RESULTS  */
 
 #results-wrapper {
-    width: 1400px;
+    width: 100%;
     height: 500px;
     background-image: url(../img/tv-header-results.png);
+    background-repeat: repeat-x;
 }
 
 #results-wrapper h1{
@@ -97,12 +106,15 @@ section.question ul li img.yesno {
 
 #results-img {
     float: left;
+    position: relative;
+    left: 125px;
+    top: 40px;
 }
 
 #results-text {
     background: rgb(255, 255, 255); /* Fallback for older browsers without RGBA-support */
     background: rgba(255, 255, 255, 0.5);
-    float: left;
+    float: right;
     width: 550px;
     padding: 30px;
 }
