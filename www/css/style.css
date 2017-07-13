@@ -124,3 +124,6 @@ section.question ul li img.yesno {
     font: 14px 'Open Sans', sans-serif;
     line-height: 20px;
 }
+.hide {
+    display: none;
+}

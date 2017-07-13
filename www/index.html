@@ -76,7 +76,6 @@
     <!-- ADOBE ANALYTICS -->
     <script src="//assets.adobedtm.com/4fc527d6fda921c80e462d11a29deae2e4cf7514/satelliteLib-c91fdc6ac624c6cbcd50250f79786de339793801.js"></script>
     <script src="http://interactive.nydailynews.com/includes/js/vendor/jquery.js"></script>
-    <script src="js/lib/three.js"></script>
 
     <script data-main="http://assets.nydailynews.com/nydn/js/rh.js?r=20170405001" src="http://assets.nydailynews.com/nydn/js/require.js?r=2016LIST" defer></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Open+Sans:400,800|PT+Serif:700,400,400i" rel="stylesheet">
@@ -200,35 +199,51 @@
 
         <ul>
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Comedy</p>
+                <a href="#question-1-comedy" onclick="quizm.question_one('comedy'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Comedy</p>
+                </a>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Action</p>
+                <a href="#question-1-action" onclick="quizm.question_one('action'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Action</p>
+                </a>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Drama</p>
+                <a href="#question-1-drama" onclick="quizm.question_one('drama'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Drama</p>
+                </a>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Thriller</p>
+                <a href="#question-1-thriller" onclick="quizm.question_one('thriller'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Thriller</p>
+                </a>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Crime</p>
+                <a href="#question-1-crime" onclick="quizm.question_one('crime'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Crime</p>
+                </a>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Sci-Fi/Fantasy</p>
+                <a href="#question-1-sci-fi" onclick="quizm.question_one('sci-fi'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Sci-Fi/Fantasy</p>
+                </a>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Reality</p>
+                <a href="#question-1-reality" onclick="quizm.question_one('reality'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Reality</p>
+                </a>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Documentary</p>
+                <a href="#question-1-documentary" onclick="quizm.question_one('documentary'); return false;">
+                    <img src="http://via.placeholder.com/200x200"><p>Documentary</p>
+                </a>
             </li>
         </ul>
     </section>
@@ -305,7 +320,7 @@
       </div> <section id="rao">  <div id="rao-close"></div> <div id="rao-wrap"></div> </section> 
 </div>
 <div id="r-scripts">
-    <div id="parsely-root" style="display: none">
+    <div id="parsely-root" class="hide">
         <span id="parsely-cfg" data-parsely-site="nydailynews.com"></span>
     </div>
     <div class="r-ad">
@@ -317,14 +332,29 @@
 <script>
 // MAIN JS
 var quizm = {
-    answers: [],
-    question_one: function() {},
+    answers: {},
+    show_one: function(id) {
+        // Show a question
+        $('.question').addClass('hide');
+        $('#question-' + id).removeClass('hide');
+    },
+    question_one: function(answer) {
+        console.log(answer);
+        this.answers.one = answer;
+    },
     question_two: function() {},
     question_three: function() {},
     question_four: function() {},
     question_five: function() {},
     show_results: function() {},
     init: function() {
+        // Show the first question
+        this.show_one('1');
+        // In case onclick events are disabled
+        $(window).on('hashchange', function() {
+            var hash = document.location.hash.substr(1);
+            console.log(hash);
+        });
     }
 };
 quizm.init();
