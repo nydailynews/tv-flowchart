@@ -199,49 +199,49 @@
 
         <ul>
             <li>
-                <a href="#question-1-comedy" onclick="quizm.question_one('comedy'); return false;">
+                <a href="#question-1-comedy" onclick="quizm.question_one.answer('comedy'); return false;">
                     <img src="img/comedy/the-office.jpg"><p>Comedy</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-action" onclick="quizm.question_one('action'); return false;">
+                <a href="#question-1-action" onclick="quizm.question_one.answer('action'); return false;">
                     <img src="img/action/24.jpg" alt=""><p>Action</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-drama" onclick="quizm.question_one('drama'); return false;">
+                <a href="#question-1-drama" onclick="quizm.question_one.answer('drama'); return false;">
                     <img src="img/action/the-wire.jpg" alt=""><p>Drama</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-thriller" onclick="quizm.question_one('thriller'); return false;">
+                <a href="#question-1-thriller" onclick="quizm.question_one.answer('thriller'); return false;">
                     <img src="img/thriller/breaking-bad.jpg"><p>Thriller</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-crime" onclick="quizm.question_one('crime'); return false;">
+                <a href="#question-1-crime" onclick="quizm.question_one.answer('crime'); return false;">
                     <img src="img/crime/law-and-order.jpg"><p>Crime</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-fantasy" onclick="quizm.question_one('fantasy'); return false;">
+                <a href="#question-1-fantasy" onclick="quizm.question_one.answer('fantasy'); return false;">
                     <img src="img/fantasy/the-x-files.jpg"><p>Sci-Fi/Fantasy</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-reality" onclick="quizm.question_one('reality'); return false;">
+                <a href="#question-1-reality" onclick="quizm.question_one.answer('reality'); return false;">
                     <img src="img/reality/keeping-up-with-the-kardashians.jpg"><p>Reality</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-documentary" onclick="quizm.question_one('documentary'); return false;">
+                <a href="#question-1-documentary" onclick="quizm.question_one.answer('documentary'); return false;">
                     <img src="img/documentary/planet-earth.jpg"><p>Documentary</p>
                 </a>
             </li>
@@ -340,51 +340,46 @@ var quizm = {
     },
     question_one: {
         load: function() {
-            this.show_one('1');
+            quizm.show_one('1');
         },
         answer: function(answer) {
             console.log(answer);
-            this.answers.one = answer;
-            this.load_question_two();
+            quizm.answers.one = answer;
+            quizm.question_two.load();
         },
     },
     question_two: {
         load: function() {
-            this.show_one('2');
+            quizm.show_one('2');
         },
         answer: function() {},
     },
-    question_two: {
-        load: function() {
-            this.show_one('1');
-        },
-        answer: function(answer) {
-        }
-    ,
     question_three: {
         load: function() {
-            this.show_one('1');
+            quizm.show_one('3');
         },
         answer: function(answer) {
         }
-    ,
+    },
     question_four: {
         load: function() {
-            this.show_one('1');
+            quizm.show_one('4');
         },
         answer: function(answer) {
         }
-    ,
+    },
     question_five: {
         load: function() {
-            this.show_one('1');
+            quizm.show_one('5');
         },
         answer: function(answer) {
         }
-    ,
+    },
     show_results: function() {},
     init: function() {
         // Show the first question
+        this.question_one.load();
+
         // In case onclick events are disabled
         $(window).on('hashchange', function() {
             var hash = document.location.hash.substr(1);
