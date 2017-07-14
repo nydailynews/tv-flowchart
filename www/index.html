@@ -270,19 +270,19 @@
         <h2>3. How do you feel about ...?</h2>
         <ul>
             <li>
-                <p id="question-3-var">Some Text Here</p>
-                <img src="img/tv-background.png" style="width: 89%;" alt="">
+                <p id="question-3-var" class="feel-about">text</p>
+                <img src="img/tv-background.png" style="width: 89%; position: relative;" alt="">
             </li>
             
             <li>
                 <a href="#question-3-1" onclick="quizm.question_three.answer('1'); return false;">
-                <img class="yesno" src="img/yay.png" alt="Yes">
+                <img id="yes" class="yesno" src="img/yay.png" alt="Yes">
                 </a>
             </li>
 
             <li>
-                <a href="#question-3-1" onclick="quizm.question_three.answer('0'); return false;">
-                <img class="yesno" src="img/nay.png" alt="No">
+                <a href="#question-3-2" onclick="quizm.question_three.answer('0'); return false;">
+                <img id="no" class="yesno" src="img/nay.png" alt="No">
                 </a>
             </li>
         </ul>
@@ -292,11 +292,15 @@
         <h2>4. How long is each episode?</h2>
         <ul>
             <li>
+                <a href="#question-4-1" onclick="quizm.question_four.answer('30'); return false;">
                 <img src="img/30-minutes.png" alt="30 minutes"><p>30 minutes</p>
+                </a>
             </li>
 
             <li>
+                <a href="#question-4-2" onclick="quizm.question_four.answer('60'); return false;">
                 <img src="img/60-minutes.png" alt="60 minutes"><p>60 minutes</p>
+                </a>
             </li>
         </ul>
     </section>
@@ -305,11 +309,15 @@
         <h2>5. Which animal to you prefer?</h2>
         <ul>
             <li>
+                <a href="#question-5-1" onclick="quizm.question_five.answer('flamingo'); return false;">
                 <img src="img/flamingo.jpg"><p>Flamingo</p>
+                </a>
             </li>
 
             <li>
+                <a href="#question-5-2" onclick="quizm.question_five.answer('polar bear'); return false;">
                 <img src="img/polar-bear.jpg"><p>Polar Bear</p>
+                </a>
             </li>
         </ul>
 
@@ -429,8 +437,8 @@ var quizm = {
     },
     show_one: function(id) {
         // Show a question
-        $('.question').addClass('hide');
-        $('#question-' + id).removeClass('hide');
+        // $('.question').addClass('hide');
+        // $('#question-' + id).removeClass('hide');
     },
     question_one: {
         load: function() {
@@ -462,7 +470,22 @@ var quizm = {
             quizm.show_one('3');
             var genrestuff = genre[quizm.answers.one]
             $('#question-3-var').text(genrestuff['feel-about']);
+            $('#yes').hover(function(){
+                 $(this).attr('src', 'img/yay-selected.png');
+            },
+            function(){
+                 $(this).attr('src', 'img/yay.png');
+            },
+            )
 
+            $('#no').hover(function(){
+                 $(this).attr('src', 'img/nay-selected.png');
+            },
+            function(){
+                 $(this).attr('src', 'img/nay.png');
+            },
+
+            )
         },
         answer: function(answer) {
             console.log(answer);
@@ -475,6 +498,9 @@ var quizm = {
             quizm.show_one('4');
         },
         answer: function(answer) {
+            console.log(answer);
+            quizm.answers.four = answer;
+            quizm.question_five.load();
         }
     },
     question_five: {
@@ -482,6 +508,9 @@ var quizm = {
             quizm.show_one('5');
         },
         answer: function(answer) {
+            console.log(answer);
+            quizm.answers.five = answer;
+            quizm.show_results.load();
         }
     },
     show_results: function() {},

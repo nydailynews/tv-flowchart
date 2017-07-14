@@ -86,6 +86,16 @@ section.question ul li img {
     margin-bottom: -3px;
 }
 
+section.question ul li p.feel-about {
+    font: bold 70px 'Open Sans', sans-serif;
+    background: none;
+    color: black;
+    position: absolute;
+    letter-spacing: normal;
+    display: inline;
+    margin: 60px;
+}
+
 section.question ul li img.yesno {
     width: 300px;
     border: none;
