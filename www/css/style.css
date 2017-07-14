@@ -52,6 +52,10 @@ h2 {
     margin: 50px 0 25px 0;
  }
 
+section {
+    margin-bottom: 40px;
+ }
+
 section.question ul {
     list-style: none;
     display: -webkit-box;
@@ -80,7 +84,6 @@ section.question ul li p {
 
 section.question ul li img {
     margin-bottom: -3px;
-    border: 1px solid #D8D8D8;
 }
 
 section.question ul li img.yesno {

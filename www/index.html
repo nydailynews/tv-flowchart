@@ -212,7 +212,7 @@
 
             <li>
                 <a href="#question-1-drama" onclick="quizm.question_one.answer('drama'); return false;">
-                    <img src="img/action/the-wire.jpg" alt=""><p>Drama</p>
+                    <img src="img/drama/the-wire.jpg" alt=""><p>Drama</p>
                 </a>
             </li>
 
@@ -249,7 +249,7 @@
     </section>
 
     <section id="question-2" class="question">
-        <h2>2. Choose an actor</h2>
+        <h2>2. Choose an actor.</h2>
 
         <ul>
             <li>
@@ -275,11 +275,15 @@
             </li>
             
             <li>
+                <a href="#question-3-1" onclick="quizm.question_three.answer('1'); return false;">
                 <img class="yesno" src="img/yay.png" alt="Yes">
+                </a>
             </li>
 
             <li>
+                <a href="#question-3-1" onclick="quizm.question_three.answer('0'); return false;">
                 <img class="yesno" src="img/nay.png" alt="No">
+                </a>
             </li>
         </ul>
     </section>
@@ -301,11 +305,11 @@
         <h2>5. Which animal to you prefer?</h2>
         <ul>
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Flamingo</p>
+                <img src="img/flamingo.jpg"><p>Flamingo</p>
             </li>
 
             <li>
-                <img src="http://via.placeholder.com/200x200"><p>Polar Bear</p>
+                <img src="img/polar-bear.jpg"><p>Polar Bear</p>
             </li>
         </ul>
 
@@ -333,6 +337,7 @@
     </div>
 </div>
 <footer id="templatefooter"></footer>
+
 <script>
 // MAIN JS
 var genre = {
@@ -440,14 +445,29 @@ var quizm = {
     question_two: {
         load: function() {
             quizm.show_one('2');
+            var genrestuff = genre[quizm.answers.one]
+            $('#actor-1').attr('src', 'img/' + quizm.answers.one + '/' + quizm.slugify(genrestuff['actor-1']) + '.jpg');
+            $('#actor-2').attr('src', 'img/' + quizm.answers.one + '/' + quizm.slugify(genrestuff['actor-2']) + '.jpg');
+            $('#actor-1 ~ p').text(genrestuff['actor-1']);
+            $('#actor-2 ~ p').text(genrestuff['actor-2']);
         },
-        answer: function() {},
+        answer: function(answer) {
+            console.log(answer);
+            quizm.answers.two = answer;
+            quizm.question_three.load();
+        },
     },
     question_three: {
         load: function() {
             quizm.show_one('3');
+            var genrestuff = genre[quizm.answers.one]
+            $('#question-3-var').text(genrestuff['feel-about']);
+
         },
         answer: function(answer) {
+            console.log(answer);
+            quizm.answers.three = answer;
+            quizm.question_four.load();
         }
     },
     question_four: {
