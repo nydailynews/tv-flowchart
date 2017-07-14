@@ -200,49 +200,49 @@
         <ul>
             <li>
                 <a href="#question-1-comedy" onclick="quizm.question_one('comedy'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Comedy</p>
+                    <img src="img/comedy/the-office.jpg"><p>Comedy</p>
                 </a>
             </li>
 
             <li>
                 <a href="#question-1-action" onclick="quizm.question_one('action'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Action</p>
+                    <img src="img/action/24.jpg" alt=""><p>Action</p>
                 </a>
             </li>
 
             <li>
                 <a href="#question-1-drama" onclick="quizm.question_one('drama'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Drama</p>
+                    <img src="img/action/the-wire.jpg" alt=""><p>Drama</p>
                 </a>
             </li>
 
             <li>
                 <a href="#question-1-thriller" onclick="quizm.question_one('thriller'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Thriller</p>
+                    <img src="img/thriller/breaking-bad.jpg"><p>Thriller</p>
                 </a>
             </li>
 
             <li>
                 <a href="#question-1-crime" onclick="quizm.question_one('crime'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Crime</p>
+                    <img src="img/crime/law-and-order.jpg"><p>Crime</p>
                 </a>
             </li>
 
             <li>
-                <a href="#question-1-sci-fi" onclick="quizm.question_one('sci-fi'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Sci-Fi/Fantasy</p>
+                <a href="#question-1-fantasy" onclick="quizm.question_one('fantasy'); return false;">
+                    <img src="img/fantasy/the-x-files.jpg"><p>Sci-Fi/Fantasy</p>
                 </a>
             </li>
 
             <li>
                 <a href="#question-1-reality" onclick="quizm.question_one('reality'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Reality</p>
+                    <img src="img/reality/keeping-up-with-the-kardashians.jpg"><p>Reality</p>
                 </a>
             </li>
 
             <li>
                 <a href="#question-1-documentary" onclick="quizm.question_one('documentary'); return false;">
-                    <img src="http://via.placeholder.com/200x200"><p>Documentary</p>
+                    <img src="img/documentary/planet-earth.jpg"><p>Documentary</p>
                 </a>
             </li>
         </ul>
@@ -341,7 +341,10 @@ var quizm = {
     question_one: function(answer) {
         console.log(answer);
         this.answers.one = answer;
+        this.load_question_two();
+        this.show_one('2');
     },
+    load_question_two: function() {},
     question_two: function() {},
     question_three: function() {},
     question_four: function() {},
