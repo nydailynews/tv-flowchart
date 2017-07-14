@@ -338,21 +338,53 @@ var quizm = {
         $('.question').addClass('hide');
         $('#question-' + id).removeClass('hide');
     },
-    question_one: function(answer) {
-        console.log(answer);
-        this.answers.one = answer;
-        this.load_question_two();
-        this.show_one('2');
+    question_one: {
+        load: function() {
+            this.show_one('1');
+        },
+        answer: function(answer) {
+            console.log(answer);
+            this.answers.one = answer;
+            this.load_question_two();
+        },
     },
-    load_question_two: function() {},
-    question_two: function() {},
-    question_three: function() {},
-    question_four: function() {},
-    question_five: function() {},
+    question_two: {
+        load: function() {
+            this.show_one('2');
+        },
+        answer: function() {},
+    },
+    question_two: {
+        load: function() {
+            this.show_one('1');
+        },
+        answer: function(answer) {
+        }
+    ,
+    question_three: {
+        load: function() {
+            this.show_one('1');
+        },
+        answer: function(answer) {
+        }
+    ,
+    question_four: {
+        load: function() {
+            this.show_one('1');
+        },
+        answer: function(answer) {
+        }
+    ,
+    question_five: {
+        load: function() {
+            this.show_one('1');
+        },
+        answer: function(answer) {
+        }
+    ,
     show_results: function() {},
     init: function() {
         // Show the first question
-        this.show_one('1');
         // In case onclick events are disabled
         $(window).on('hashchange', function() {
             var hash = document.location.hash.substr(1);
