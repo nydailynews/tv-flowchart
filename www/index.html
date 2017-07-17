@@ -1168,6 +1168,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.two = answer;
+            quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'axis', +answer);
             quizm.question_three.load();
         },
     },
@@ -1196,6 +1197,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.three = answer;
+            quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'feel-about', +answer);
             quizm.question_four.load();
         }
     },
@@ -1206,6 +1208,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.four = answer;
+            quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'length', +answer);
             quizm.question_five.load();
         }
     },
@@ -1216,6 +1219,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.five = answer;
+            //quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'length', +answer);
             quizm.show_results.load();
         }
     },
