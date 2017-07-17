@@ -41,4 +41,44 @@
         margin-top: -3px;
     }
 
+    .matchmaker-logo {
+        margin: 15px 30px;
+    }
+
+    #results-wrapper {
+        width: 100%;
+        height: 450px;
+    }
+
+    #results-wrapper h1 {
+        position: relative;
+        left: 30px;
+        top: 20px;
+        font: normal 27px 'Open Sans Condensed', sans-serif;
+    }
+
+    #results-img {
+        position: relative;
+        top: 30px;
+        left: 30px;
+    }
+
+    #results-text {
+        float: none;
+        width: 100%;
+        padding: 0;
+        background: none;
+        margin-top: 40px;
+    }
+
+    #results-text-p {
+        margin-right: 35px;
+    }
+
+    #try-again {
+        font: normal 15px 'Open Sans' sans-serif;
+        float: right;
+        margin: -25px 20px 60px 0;
+    } 
+
 }
