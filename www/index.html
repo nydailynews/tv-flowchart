@@ -1112,6 +1112,7 @@ var shows = [
 
 var quizm = {
     answers: {},
+    show_candidates: {},
     slugify:  function(str) {
         // Cribbed from https://github.com/andrefarzat/slugify/blob/master/slugify.js
          var from = 'àáäãâèéëêìíïîòóöôõùúüûñç·/_,:;',
@@ -1135,13 +1136,26 @@ var quizm = {
         // Show a question
         $('#question-' + id).removeClass('hide');
     },
+    filter_shows: function(arr, field, val) {
+        // Run through the given array arr and return the items where the
+        // field matched the val.
+        var l = arr.length;
+        var items = [];
+        for ( var i = 0; i < l; i ++ ) {
+            if ( arr[i][field] === val ) items.push(arr[i]);
+        }
+        // We don't want to return nothing.
+        if ( items.length == 0 ) return arr;
+
+        return items;
+    },
     question_one: {
         load: function() {
             quizm.show_one('1');
         },
         answer: function(answer) {
-            console.log(answer);
             quizm.answers.one = answer;
+            quizm.show_candidates = quizm.filter_shows(shows, 'genre', answer);
             quizm.question_two.load();
         },
     },
@@ -1157,6 +1171,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.two = answer;
+            quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'axis', +answer);
             quizm.question_three.load();
         },
     },
@@ -1185,6 +1200,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.three = answer;
+            quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'feel-about', +answer);
             quizm.question_four.load();
         }
     },
@@ -1195,6 +1211,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.four = answer;
+            quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'length', +answer);
             quizm.question_five.load();
         }
     },
@@ -1205,6 +1222,7 @@ var quizm = {
         answer: function(answer) {
             console.log(answer);
             quizm.answers.five = answer;
+            //quizm.show_candidates = quizm.filter_shows(quizm.show_candidates, 'length', +answer);
             quizm.show_results.load();
         }
     },
