@@ -1144,6 +1144,9 @@ var quizm = {
         for ( var i = 0; i < l; i ++ ) {
             if ( arr[i][field] === val ) items.push(arr[i]);
         }
+        // We don't want to return nothing.
+        if ( items.length == 0 ) return arr;
+
         return items;
     },
     question_one: {
