@@ -91,12 +91,11 @@ section#question-3 ul li#q3 {
 }
 
 section.question ul li p.feel-about {
-    font: bold 70px 'Open Sans', sans-serif;
+    font: bold 50px 'Open Sans', sans-serif;
     background: none;
     color: black;
     letter-spacing: normal;
     display: inline;
-    margin: 60px;
 }
 
 section.question ul li img.yesno {
