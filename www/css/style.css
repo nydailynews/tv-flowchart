@@ -37,8 +37,12 @@ h1 {
     font: 30px 'Open Sans Condensed', sans-serif;
     width: 80%;
     height: 100%;
-    margin: 30px;
+    margin: 30px auto;
     padding: 12px;
+    color: #00aac8;
+}
+
+.fave a {
     color: #00aac8;
 }
 
@@ -123,7 +127,7 @@ section.question ul li img.yesno {
     font: normal 50px 'Open Sans Condensed', sans-serif;
 }
 
-#results-img {
+#results {
     float: left;
     position: relative;
     left: 125px;
@@ -144,12 +148,14 @@ section.question ul li img.yesno {
     line-height: 20px;
 }
 
-#try-again h3 {
-    font: normal 15px 'Open Sans' sans-serif;
+#results-text a {
+    color: #333;
     text-transform: uppercase;
+}
+
+.try-again {
     float: right;
-    margin: -75px 30px 0 0;
-} 
+}
 
 .hide {
     display: none;

@@ -1,12 +1,13 @@
 /* HANDHELD-SPECIFIC */
 
-@media only screen and (min-width: 220px) and ( max-width:1023px ) {
+@media only screen and (min-width: 250px) and (max-width: 727px) {
     .tv-header {
         background-image: url(../img/tv-header.png);
         background-size: 700px;
     }
 
     article {
+        width: 100%;
         margin: 0 30px;
     }
 
@@ -42,43 +43,66 @@
     }
 
     .matchmaker-logo {
-        margin: 15px 30px;
+        margin-bottom: 10px;
+        text-align: center;
+        margin: 15px auto;
     }
 
     #results-wrapper {
         width: 100%;
         height: 450px;
+        text-align: center;
     }
 
     #results-wrapper h1 {
         position: relative;
-        left: 30px;
+        left: 25px;
         top: 20px;
-        font: normal 27px 'Open Sans Condensed', sans-serif;
+        font: normal 25px 'Open Sans Condensed', sans-serif;
     }
 
-    #results-img {
-        position: relative;
-        top: 30px;
-        left: 30px;
+    #results {
+        left: inherit;
     }
 
     #results-text {
         float: none;
-        width: 100%;
+        width: 85%;
         padding: 0;
         background: none;
-        margin-top: 40px;
+        margin: 40px auto;
+        text-align: left;
     }
 
-    #results-text-p {
-        margin-right: 35px;
-    }
-
-    #try-again {
-        font: normal 15px 'Open Sans' sans-serif;
+    .try-again {
         float: right;
-        margin: -25px 20px 60px 0;
-    } 
+        margin-bottom: 60px;
+    }
 
+}
+
+/*TABLET STYLES*/
+
+@media only screen and (min-width: 728px) and (max-width: 1024px) {
+
+    article {
+        margin: 50px;
+    }
+
+    .matchmaker-logo {
+        text-align: center;
+    }
+
+    #results-wrapper h1 {
+        left: 50px;
+    }
+
+    #results {
+        left: 0px;
+        margin: auto 30px;
+    }
+
+    #results-text {
+        width: 450px;
+    }
 }
